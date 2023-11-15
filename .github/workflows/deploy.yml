@@ -27,8 +27,7 @@ jobs:
         run: |
           git config --global user.email "reinkejace@gmail.com"
           git config --global user.name "jreinke428"
-          git config --global credential.helper 'cache --timeout=3600'
-          echo "machine github.com login ${{ secrets.GH_TOKEN }}" > ~/.netrc
+          git config --global credential.helper '!f() { echo "username=github-actions" ; echo "password=${{ secrets.GH_TOKEN }}" ; git credential reject ; }; f'
 
       - name: Create Build Branch
         run: |
