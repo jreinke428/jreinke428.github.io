@@ -23,6 +23,11 @@ jobs:
       - name: Build Vue Project
         run: npm run build
 
+      - name: Set up Git
+        run: |
+          git config --global user.email "reinkejace@gmail.com"
+          git config --global user.name "jreinke428"
+
       - name: Create Build Branch
         run: |
           git checkout -b build
