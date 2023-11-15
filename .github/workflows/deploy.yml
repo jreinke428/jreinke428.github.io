@@ -20,5 +20,7 @@ jobs:
         run: |
           npm i
           npm run build
+          git config --global user.email "reinkejace@gmail.com"
+          git config --global user.name "jreinke428"
           git add dist && git commit -m 'build dist'
           git subtree push --prefix dist origin build
