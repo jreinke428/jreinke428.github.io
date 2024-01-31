@@ -13,7 +13,7 @@
     >
       {{ link[0].toUpperCase() + link.slice(1) }}
     </p>
-    <p @click="openLink('/src/assets/jace_reinke_resume.pdf')" class="cursor-pointer brightness-50 hover:brightness-100 transition-all">Resume</p>
+    <p @click="openLink('/assets/jace_reinke_resume.pdf')" class="cursor-pointer brightness-50 hover:brightness-100 transition-all">Resume</p>
     <span class="absolute bottom-0 right-0 flex gap-4 p-6">
       <i class="pi pi-github text-3xl cursor-pointer hover:brightness-50" @click="openLink('https://github.com/jreinke428')"></i>
       <i
@@ -46,7 +46,7 @@
       <img
         v-animateonscroll="{ enterClass: 'sm:animate-[zoom_1s]', leaveClass: 'fadeout' }"
         class="duration-1000 rounded-full w-64 h-64 sm:w-72 sm:h-72 object-cover"
-        src="@/assets/portrait.jpg"
+        src="/assets/portrait.jpg"
       />
       <p
         v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout' }"
@@ -67,7 +67,7 @@
         v-for="language in languages"
         :key="language"
         v-tooltip.top="language"
-        :src="`/src/assets/${language}.png`"
+        :src="`/assets/${language}.png`"
         class="object-contain w-6 sm:w-14"
       />
     </div>
@@ -80,7 +80,7 @@
         v-for="technology in technologies"
         :key="technology"
         v-tooltip.top="technology"
-        :src="`/src/assets/${technology}.png`"
+        :src="`/assets/${technology}.png`"
         class="object-contain w-6 sm:w-14"
       />
     </div>
@@ -176,7 +176,7 @@ const projects = [
   {
     title: 'Stardew Valley Relationship Helper',
     subtitle: ['Vue', 'Vite', 'TypeScript', 'DaisyUI', 'Tailwind'],
-    image: '/src/assets/srh.png',
+    image: '/assets/srh.png',
     description: 'An interactive web application for users to track relationships in Stardew Valley.',
     infoLink: 'https://github.com/gimgine/stardew-relationship-helper',
     projectLink: 'https://gimgine.github.io/stardew-relationship-helper/#/'
@@ -184,7 +184,7 @@ const projects = [
   {
     title: 'snipbit',
     subtitle: ['Vue', 'Vite', 'TypeScript', 'PrimeVue', 'Tailwind', 'PocketBase'],
-    image: '/src/assets/snipbit.png',
+    image: '/assets/snipbit.png',
     description: 'A social media platform for developers to store and share code snippets.',
     infoLink: 'https://devpost.com/software/snipbit-sc0au4',
     projectLink: 'https://snipbit.pockethost.io/#/'
@@ -192,21 +192,21 @@ const projects = [
   {
     title: 'tabs',
     subtitle: ['React Native', 'Node', 'MongoDB', 'Geolocation', 'REST Api'],
-    image: '/src/assets/tabs.png',
+    image: '/assets/tabs.png',
     description: 'An iOS application targeting drunk driving prevention among groups.',
     infoLink: 'https://devpost.com/software/tabs-sc6dxz'
   },
   {
     title: 'Echoes of Existence',
     subtitle: ['Godot', 'GDScript', 'Flow Field Pathfinding', 'Procedural World Gen'],
-    image: '/src/assets/eoe.png',
+    image: '/assets/eoe.png',
     description: 'A 2D topdown game where players find and scan plants while fighting off hordes of aliens.',
     infoLink: 'https://naroop.itch.io/echoes-of-existence'
   },
   {
     title: 'eMission',
     subtitle: ['Flutter', 'Dart', 'Google Maps', 'Geolocation', 'Node'],
-    image: '/src/assets/emission.png',
+    image: '/assets/emission.png',
     description: "A mobile application gamifying the reduction of users' carbon footprint.",
     infoLink: 'https://github.com/Developer-DUCS/eMission/tree/development'
   }
