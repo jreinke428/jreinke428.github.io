@@ -117,30 +117,30 @@
       <p-input
         id="name"
         v-model="name.value"
-        class="w-[41rem]"
+        class="w-[20rem] sm:w-[40rem]"
         :class="name.error ? 'p-invalid' : ''"
         @input="(e: any) => (name.error = e.data ? '' : 'Name is required.')"
       />
       <label for="name">Name</label>
     </span>
-    <small v-if="name.error" class="p-error -mt-8 text-left w-[41rem]">{{ name.error }}</small>
+    <small v-if="name.error" class="p-error -mt-8 text-left w-[20rem] sm:w-[40rem]">{{ name.error }}</small>
     <span class="p-float-label">
       <p-input
         id="email"
         v-model="email.value"
-        class="w-[41rem]"
+        class="w-[20rem] sm:w-[40rem]"
         :class="email.error ? 'p-invalid' : ''"
         @input="(e: any) => (email.error = e.data ? '' : 'Email is required.')"
       />
       <label for="email">Email</label>
     </span>
-    <small v-if="email.error" class="p-error -mt-8 text-left w-[41rem]">{{ email.error }}</small>
+    <small v-if="email.error" class="p-error -mt-8 text-left w-[20rem] sm:w-[40rem]">{{ email.error }}</small>
     <span class="p-float-label">
-      <p-input id="subject" v-model="subject" class="w-[41rem]" />
+      <p-input id="subject" v-model="subject" class="w-[20rem] sm:w-[40rem]" />
       <label for="subject">Subject</label>
     </span>
     <span class="p-float-label">
-      <p-textarea id="body" v-model="body" class="w-[41rem]" rows="5" />
+      <p-textarea id="body" v-model="body" class="w-[20rem] sm:w-[40rem]" rows="5" />
       <label for="body">Body</label>
     </span>
     <p-button @click="sendEmail">Send</p-button>
@@ -162,7 +162,7 @@ import debounce from 'lodash/debounce';
 const toastService = useToast();
 const links = ['home', 'about', 'projects', 'contact'];
 
-const activeLink = ref(links.find((link) => document.getElementById(link)?.getBoundingClientRect().bottom ?? 0 > 0) ?? '');
+const activeLink = ref(links.find((link) => document.getElementById(link)?.getBoundingClientRect().bottom ?? 0 >= 0) ?? '');
 const isScrolled = ref(window.scrollY > 0);
 const showMenu = ref(false);
 const name = ref({ value: '', error: '' });
