@@ -119,7 +119,7 @@
         v-model="name.value"
         class="w-[20rem] sm:w-[40rem]"
         :class="name.error ? 'p-invalid' : ''"
-        @input="(e: any) => (name.error = e.data ? '' : 'Name is required.')"
+        @update:model-value="(val: string) => (name.error = val ? '' : 'Name is required.')"
       />
       <label for="name">Name</label>
     </span>
@@ -130,7 +130,7 @@
         v-model="email.value"
         class="w-[20rem] sm:w-[40rem]"
         :class="email.error ? 'p-invalid' : ''"
-        @input="(e: any) => (email.error = e.data ? '' : 'Email is required.')"
+        @update:model-value="(val: string) => (name.error = val ? '' : 'Name is required.')"
       />
       <label for="email">Email</label>
     </span>
